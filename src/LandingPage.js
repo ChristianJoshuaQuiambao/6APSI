@@ -1,21 +1,20 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import LoginPage from './LoginPage';
 
 function LandingPage() {
+    const navigate = useNavigate();
+
+    const toLoginPage = () => {
+    navigate('/login');
+    };
  
   return (
     <div>
-      <h2>Landing Page</h2>
-      <input
-        type="text"
-        placeholder="Username"
-       
-      /><br />
-      <input
-        type="password"
-        placeholder="Password"
-     
-      /><br />
-      <button >Login</button>
+    <center>
+        <h1>Landing Page</h1>
+        <button type='button' onClick={toLoginPage}>To the login page</button>
+    </center>
     </div>
   );
 }
